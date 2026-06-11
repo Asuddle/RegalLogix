@@ -4,27 +4,30 @@
 
 :root {
   color-scheme: light;
-  /* Light theme tokens (RGB triplets for Tailwind alpha support) */
-  --canvas: 247 245 239; /* bone */
-  --surface: 255 254 250;
-  --surface-2: 240 237 228;
-  --fg: 8 8 12; /* near ink */
-  --muted: 80 78 88;
-  --line: 8 8 12;
-  --stroke: 8 8 12;
-  --grid: 8 8 12;
+  /* Bronze Editorial — Light (layered warm creams, no pure white) */
+  --canvas: 245 240 227;       /* #f5f0e3 warm bone */
+  --surface: 235 226 201;      /* #ebe2c9 sand */
+  --surface-2: 255 249 234;    /* #fff9ea cream highlight */
+  --surface-3: 217 202 163;    /* #d9caa3 deeper band */
+  --fg: 26 22 16;              /* #1a1610 warm ink */
+  --muted: 90 79 62;           /* #5a4f3e walnut */
+  --line: 26 22 16;
+  --stroke: 26 22 16;
+  --grid: 26 22 16;
 }
 
 .dark {
   color-scheme: dark;
-  --canvas: 5 5 7; /* ink */
-  --surface: 12 12 18;
-  --surface-2: 18 18 26;
-  --fg: 247 245 239; /* bone */
-  --muted: 170 170 180;
-  --line: 247 245 239;
-  --stroke: 247 245 239;
-  --grid: 247 245 239;
+  /* Bronze Editorial — Dark (layered warm charcoals, never flat black) */
+  --canvas: 14 12 10;          /* #0e0c0a warmest near-black */
+  --surface: 24 20 16;         /* #181410 */
+  --surface-2: 34 28 22;       /* #221c16 */
+  --surface-3: 45 37 25;       /* #2d2519 accent wash */
+  --fg: 245 239 226;           /* #f5efe2 warm ivory */
+  --muted: 179 169 143;        /* #b3a98f warm muted */
+  --line: 245 239 226;
+  --stroke: 245 239 226;
+  --grid: 245 239 226;
 }
 
 html,
@@ -45,14 +48,12 @@ body {
   cursor: none;
 }
 
-/* Italic emphasis uses Fraunces by default */
 em,
 i {
   font-family: "Fraunces", ui-serif, Georgia, serif;
   font-style: italic;
   font-feature-settings: "ss01" on;
 }
-
 em.not-italic,
 i.not-italic {
   font-style: normal;
@@ -60,25 +61,18 @@ i.not-italic {
 }
 
 @media (pointer: coarse) {
-  body {
-    cursor: auto;
-  }
+  body { cursor: auto; }
 }
 
 ::selection {
-  background: rgba(139, 92, 246, 0.35);
+  background: rgba(212, 168, 87, 0.35);
   color: rgb(var(--fg));
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-track {
-  background: rgb(var(--canvas));
-}
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: rgb(var(--canvas)); }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #4c2a85, #155e75);
+  background: linear-gradient(180deg, #a07a30, #7c5db8);
   border-radius: 10px;
 }
 
@@ -86,41 +80,60 @@ i.not-italic {
   .container-x {
     @apply mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16;
   }
+  .section {
+    @apply relative py-16 md:py-20;
+  }
+  .section-tight {
+    @apply relative py-10 md:py-14;
+  }
   .eyebrow {
-    @apply inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.25em] text-fg/55;
+    @apply inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.25em] text-fg/60;
   }
   .eyebrow::before {
     content: "";
     width: 28px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.8), transparent);
+    background: linear-gradient(90deg, transparent, #d4a857, transparent);
   }
   .display {
     @apply font-display font-medium leading-[0.95] tracking-tightest text-fg;
   }
   .btn-primary {
-    @apply relative inline-flex items-center gap-3 rounded-full bg-fg px-7 py-4 font-mono text-[12px] uppercase tracking-[0.2em] text-canvas transition-all duration-300 hover:bg-violet-500 hover:text-bone-50;
+    @apply relative inline-flex items-center gap-3 rounded-full bg-fg px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.2em] text-canvas transition-all duration-300 hover:bg-gold-500 hover:text-ink-950;
   }
   .btn-ghost {
-    @apply relative inline-flex items-center gap-3 rounded-full border border-fg/15 px-7 py-4 font-mono text-[12px] uppercase tracking-[0.2em] text-fg/80 transition-all duration-300 hover:border-fg/40 hover:text-fg;
+    @apply relative inline-flex items-center gap-3 rounded-full border border-fg/20 px-6 py-3.5 font-mono text-[11px] uppercase tracking-[0.2em] text-fg/80 transition-all duration-300 hover:border-fg/50 hover:text-fg;
   }
   .chip {
-    @apply inline-flex items-center gap-2 rounded-full border border-fg/10 bg-fg/[0.03] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-fg/70 backdrop-blur;
+    @apply inline-flex items-center gap-2 rounded-full border border-fg/15 bg-fg/[0.04] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-fg/75 backdrop-blur;
   }
   .divider {
     @apply h-px w-full bg-gradient-to-r from-transparent via-fg/15 to-transparent;
+  }
+  .accent-band {
+    @apply relative isolate;
+  }
+  .accent-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(60% 40% at 20% 30%, rgba(212, 168, 87, 0.15), transparent 70%),
+      radial-gradient(40% 30% at 80% 70%, rgba(124, 93, 184, 0.12), transparent 70%);
+    pointer-events: none;
+    z-index: -1;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(110deg, #8b5cf6 0%, #22d3ee 55%, #d4a857 100%);
+    background: linear-gradient(110deg, #d4a857 0%, #c97f3f 35%, #7c5db8 75%, #0e7490 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .text-stroke {
-    -webkit-text-stroke: 1px rgb(var(--stroke) / 0.55);
+    -webkit-text-stroke: 1px rgb(var(--stroke) / 0.6);
     color: transparent;
   }
   .noise {
@@ -131,7 +144,7 @@ i.not-italic {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.04;
+    opacity: 0.05;
     mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.85'/></svg>");
   }
@@ -143,15 +156,12 @@ i.not-italic {
   }
   .aurora {
     background:
-      radial-gradient(60% 50% at 20% 30%, rgba(139, 92, 246, 0.22), transparent 70%),
-      radial-gradient(50% 40% at 80% 20%, rgba(34, 211, 238, 0.18), transparent 70%),
-      radial-gradient(40% 30% at 50% 90%, rgba(212, 168, 87, 0.14), transparent 70%);
+      radial-gradient(60% 50% at 20% 30%, rgba(124, 93, 184, 0.22), transparent 70%),
+      radial-gradient(50% 40% at 80% 20%, rgba(14, 116, 144, 0.18), transparent 70%),
+      radial-gradient(40% 30% at 50% 90%, rgba(212, 168, 87, 0.18), transparent 70%);
   }
   .mask-radial {
     -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
     mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
-  }
-  .fade-bottom {
-    background: linear-gradient(to bottom, transparent, rgb(var(--canvas)));
   }
 }

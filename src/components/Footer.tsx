@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="relative border-t border-fg/5 bg-canvas">
-      <div className="container-x py-20">
+      <div className="container-x py-14">
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-6">
             <p className="eyebrow">Get in touch</p>
@@ -27,6 +27,7 @@ export default function Footer() {
               {[
                 { to: "/", label: "Home" },
                 { to: "/about", label: "About" },
+                { to: "/portfolio", label: "Portfolio" },
                 { to: "/careers", label: "Careers" },
                 { to: "/contact", label: "Contact" },
               ].map((i) => (

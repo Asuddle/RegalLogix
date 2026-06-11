@@ -113,7 +113,7 @@ export default function Careers() {
           <AmbientScene colorA="#22d3ee" colorB="#a78bfa" />
         </div>
         <div className="pointer-events-none absolute inset-0 grid-lines opacity-30" />
-        <div className="container-x relative flex min-h-[80vh] flex-col justify-end pb-20 pt-40">
+        <div className="container-x relative flex min-h-[80vh] flex-col justify-end pb-14 pt-32">
           <p className="eyebrow">Careers</p>
           <h1 className="display mt-6 text-[14vw] leading-[0.9] md:text-[10vw]">
             Build with people who
@@ -153,7 +153,7 @@ export default function Careers() {
       </section>
 
       {/* Perks */}
-      <section className="relative py-32">
+      <section className="section bg-surface">
         <div className="container-x">
           <div className="grid items-end gap-10 md:grid-cols-12">
             <div className="md:col-span-7">
@@ -170,7 +170,7 @@ export default function Careers() {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-3">
+          <div className="mt-10 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-3">
             {perks.map((p, i) => (
               <motion.div
                 key={p.n}
@@ -192,7 +192,7 @@ export default function Careers() {
       </section>
 
       {/* Open roles */}
-      <section className="relative py-32">
+      <section className="section">
         <div className="container-x">
           <div className="flex items-end justify-between">
             <div>
@@ -264,7 +264,7 @@ export default function Careers() {
       </section>
 
       {/* Hiring process */}
-      <section className="relative py-32">
+      <section className="section bg-surface accent-band">
         <div className="container-x">
           <p className="eyebrow">Hiring process</p>
           <h2 className="display mt-6 text-5xl md:text-7xl">
@@ -273,7 +273,7 @@ export default function Careers() {
             <em className="text-gradient not-italic">No take-homes.</em>
           </h2>
 
-          <ol className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-4">
+          <ol className="mt-10 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-4">
             {[
               { s: "01", t: "Intro", b: "30 min with a practice lead. Mutual sniff test." },
               { s: "02", t: "Craft", b: "Paid pairing session on a real, scoped problem. ~3 hours." },
@@ -300,9 +300,9 @@ export default function Careers() {
       </section>
 
       {/* Don't see role */}
-      <section className="relative py-32">
+      <section className="section bg-surface-2">
         <div className="container-x">
-          <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-fg/10 bg-fg/[0.02] p-12 md:flex-row md:items-center md:p-16">
+          <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-fg/10 bg-canvas p-10 md:flex-row md:items-center md:p-14">
             <div>
               <p className="eyebrow">Speculative</p>
               <h3 className="display mt-4 max-w-2xl text-4xl md:text-5xl">

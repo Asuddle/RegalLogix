@@ -6,6 +6,7 @@ import ThemeToggle from "./ThemeToggle";
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
+  { to: "/portfolio", label: "Portfolio" },
   { to: "/careers", label: "Careers" },
   { to: "/contact", label: "Contact" },
 ];

@@ -5,33 +5,35 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Legacy / accent palette (theme-invariant)
         ink: {
-          950: "#050507",
-          900: "#0a0a0f",
-          800: "#0f1018",
-          700: "#161724",
+          950: "#0e0c0a",
+          900: "#181410",
+          800: "#221c16",
+          700: "#2d2519",
         },
         bone: {
-          50: "#f7f5ef",
-          100: "#eae6d8",
+          50: "#f5efe2",
+          100: "#ebe2c9",
         },
         violet: {
-          500: "#8b5cf6",
+          500: "#7c5db8",
           400: "#a78bfa",
         },
         aqua: {
           500: "#22d3ee",
           400: "#67e8f9",
+          600: "#0e7490",
         },
         gold: {
           500: "#d4a857",
           400: "#e5c07a",
+          600: "#a07a30",
         },
-        // Semantic tokens (theme-aware via CSS variables)
+        // Semantic tokens (theme-aware)
         canvas: "rgb(var(--canvas) / <alpha-value>)",
         surface: "rgb(var(--surface) / <alpha-value>)",
         "surface-2": "rgb(var(--surface-2) / <alpha-value>)",
+        "surface-3": "rgb(var(--surface-3) / <alpha-value>)",
         fg: "rgb(var(--fg) / <alpha-value>)",
         muted: "rgb(var(--muted) / <alpha-value>)",
         line: "rgb(var(--line) / <alpha-value>)",
@@ -42,9 +44,7 @@ export default {
         sans: ['"Geist"', '"Inter"', "system-ui", "sans-serif"],
         mono: ['"Geist Mono"', '"JetBrains Mono"', "ui-monospace", "monospace"],
       },
-      letterSpacing: {
-        tightest: "-0.05em",
-      },
+      letterSpacing: { tightest: "-0.05em" },
       animation: {
         marquee: "marquee 35s linear infinite",
         "marquee-rev": "marquee-rev 40s linear infinite",

@@ -106,7 +106,7 @@ export default function Landing() {
 
         <motion.div
           style={{ y: titleY, opacity: titleOpacity }}
-          className="container-x relative flex min-h-[100svh] flex-col justify-end pb-24"
+          className="container-x relative flex min-h-[100svh] flex-col justify-end pb-16"
         >
           <div className="flex items-center justify-between">
             <span className="chip">
@@ -189,7 +189,7 @@ export default function Landing() {
       </section>
 
       {/* SERVICES */}
-      <section className="relative py-32">
+      <section className="section bg-surface">
         <div className="container-x">
           <div className="grid items-end gap-10 md:grid-cols-12">
             <div className="md:col-span-7">
@@ -206,7 +206,7 @@ export default function Landing() {
             </p>
           </div>
 
-          <div className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => (
               <motion.article
                 key={s.n}
@@ -214,7 +214,7 @@ export default function Landing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.6, delay: i * 0.05 }}
-                className="group relative isolate overflow-hidden bg-canvas p-10 md:p-14"
+                className="group relative isolate overflow-hidden bg-canvas p-8 md:p-10"
                 data-cursor="hover"
               >
                 <div
@@ -249,7 +249,7 @@ export default function Landing() {
       </section>
 
       {/* STATS */}
-      <section className="relative py-32">
+      <section className="section">
         <div className="container-x">
           <div className="grid items-end gap-10 md:grid-cols-12">
             <div className="md:col-span-6">
@@ -266,7 +266,7 @@ export default function Landing() {
             </p>
           </div>
 
-          <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-4">
+          <div className="mt-10 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-4">
             {[
               { k: "8+", v: "years compounding craft" },
               { k: "60+", v: "products shipped to production" },
@@ -292,7 +292,7 @@ export default function Landing() {
       </section>
 
       {/* PROCESS */}
-      <section className="relative overflow-hidden py-32">
+      <section className="section relative overflow-hidden bg-surface accent-band">
         <div className="container-x">
           <div className="grid items-end gap-10 md:grid-cols-12">
             <div className="md:col-span-7">
@@ -309,7 +309,7 @@ export default function Landing() {
             </p>
           </div>
 
-          <ol className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-4">
+          <ol className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-4">
             {process.map((p, i) => (
               <motion.li
                 key={p.step}
@@ -331,7 +331,7 @@ export default function Landing() {
       </section>
 
       {/* WORK */}
-      <section className="relative py-32">
+      <section className="section">
         <div className="container-x">
           <div className="flex items-end justify-between">
             <div>
@@ -339,11 +339,11 @@ export default function Landing() {
               <h2 className="display mt-6 text-6xl md:text-8xl">Recent.</h2>
             </div>
             <Link
-              to="/about"
+              to="/portfolio"
               data-cursor="hover"
               className="hidden md:inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-fg/60 hover:text-fg"
             >
-              See the studio <span>→</span>
+              All projects <span>→</span>
             </Link>
           </div>
 
@@ -387,10 +387,10 @@ export default function Landing() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden py-32">
+      <section className="section relative overflow-hidden bg-surface-2">
         <div className="absolute inset-0 aurora opacity-60" />
         <div className="container-x relative">
-          <div className="relative overflow-hidden rounded-[32px] border border-fg/10 bg-fg/[0.02] p-12 md:p-20">
+          <div className="relative overflow-hidden rounded-[32px] border border-fg/10 bg-canvas p-8 md:p-10">
             <div className="grid items-center gap-10 md:grid-cols-12">
               <div className="md:col-span-8">
                 <p className="eyebrow">Next step</p>

@@ -52,7 +52,7 @@ export default function About() {
           <AmbientScene colorA="#a78bfa" colorB="#d4a857" />
         </div>
         <div className="pointer-events-none absolute inset-0 grid-lines opacity-30" />
-        <div className="container-x relative flex min-h-[80vh] flex-col justify-end pb-20 pt-40">
+        <div className="container-x relative flex min-h-[80vh] flex-col justify-end pb-14 pt-32">
           <p className="eyebrow">About</p>
           <h1 className="display mt-6 text-[14vw] leading-[0.9] md:text-[10vw]">
             A studio built like <em className="text-gradient not-italic">a small</em>
@@ -84,7 +84,7 @@ export default function About() {
       </section>
 
       {/* Manifesto */}
-      <section className="relative py-32">
+      <section className="section bg-surface">
         <div className="container-x grid items-start gap-14 md:grid-cols-12">
           <div className="md:col-span-5">
             <p className="eyebrow">Manifesto</p>
@@ -115,7 +115,7 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section className="relative py-32">
+      <section className="section">
         <div className="container-x">
           <div className="grid items-end gap-10 md:grid-cols-12">
             <div className="md:col-span-7">
@@ -128,7 +128,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-2">
+          <div className="mt-10 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-2">
             {values.map((v, i) => (
               <motion.div
                 key={v.n}
@@ -136,7 +136,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="bg-canvas p-10 md:p-14"
+                className="bg-canvas p-8 md:p-10"
               >
                 <div className="font-display text-3xl text-gold-500/80">
                   {v.n}
@@ -150,7 +150,7 @@ export default function About() {
       </section>
 
       {/* Timeline */}
-      <section className="relative py-32">
+      <section className="section bg-surface accent-band">
         <div className="container-x">
           <p className="eyebrow">Trajectory</p>
           <h2 className="display mt-6 text-5xl md:text-7xl">
@@ -159,7 +159,7 @@ export default function About() {
             <span className="text-stroke">to eighteen across three timezones.</span>
           </h2>
 
-          <ol className="mt-20 relative border-l border-fg/10 pl-8">
+          <ol className="mt-14 relative border-l border-fg/10 pl-8">
             {timeline.map((t, i) => (
               <motion.li
                 key={t.y}
@@ -185,7 +185,7 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="relative py-32">
+      <section className="section">
         <div className="container-x">
           <div className="grid items-end gap-10 md:grid-cols-12">
             <div className="md:col-span-7">
@@ -203,7 +203,7 @@ export default function About() {
             </p>
           </div>
 
-          <ul className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-3">
+          <ul className="mt-10 grid gap-px overflow-hidden rounded-3xl border border-fg/5 bg-fg/[0.02] md:grid-cols-3">
             {team.map((p, i) => (
               <motion.li
                 key={p.n}
@@ -237,9 +237,9 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-32">
+      <section className="section bg-surface-2">
         <div className="container-x">
-          <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-fg/10 bg-fg/[0.02] p-12 md:flex-row md:items-center md:p-16">
+          <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-fg/10 bg-canvas p-10 md:flex-row md:items-center md:p-14">
             <h3 className="display max-w-2xl text-4xl md:text-6xl">
               Curious about how the studio could fit your next product?
             </h3>

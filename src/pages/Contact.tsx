@@ -46,7 +46,7 @@ export default function Contact() {
           <AmbientScene colorA="#d4a857" colorB="#22d3ee" />
         </div>
         <div className="pointer-events-none absolute inset-0 grid-lines opacity-30" />
-        <div className="container-x relative pt-40">
+        <div className="container-x relative pt-32">
           <p className="eyebrow">Contact</p>
           <h1 className="display mt-6 text-[12vw] leading-[0.9] md:text-[8vw]">
             <em className="text-gradient not-italic">Start</em> the conversation.
@@ -60,7 +60,7 @@ export default function Contact() {
       </section>
 
       {/* Body */}
-      <section className="relative py-20 md:py-32">
+      <section className="relative bg-surface py-16 md:py-20">
         <div className="container-x grid gap-14 md:grid-cols-12">
           {/* Form */}
           <div className="md:col-span-8">
@@ -68,7 +68,7 @@ export default function Contact() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="rounded-3xl border border-fg/10 bg-fg/[0.03] p-12 md:p-16"
+                className="rounded-3xl border border-fg/10 bg-fg/[0.03] p-10 md:p-12"
               >
                 <div className="font-mono text-xs uppercase tracking-[0.3em] text-gold-500">
                   Received

@@ -24,39 +24,34 @@ function Cloud({ color, count = 1400 }: { color: string; count?: number }) {
 
   return (
     <Points ref={ref} positions={positions} stride={3} frustumCulled>
-      <PointMaterial
-        transparent
-        color={color}
-        size={0.015}
-        sizeAttenuation
-        depthWrite={false}
-        opacity={0.6}
-      />
+      <PointMaterial transparent color={color} size={0.015} sizeAttenuation depthWrite={false} opacity={0.6} />
     </Points>
   );
 }
 
-const DARK_PALETTE: Record<string, string> = {
-  "#a78bfa": "#a78bfa",
-  "#22d3ee": "#22d3ee",
+// Bronze Editorial palette
+const DARK: Record<string, string> = {
+  "#a78bfa": "#d4a857", // map legacy violet → bronze
+  "#22d3ee": "#0e7490", // legacy cyan → deep teal
   "#d4a857": "#d4a857",
+  "#7c5db8": "#7c5db8",
 };
-
-const LIGHT_PALETTE: Record<string, string> = {
-  "#a78bfa": "#5b3aa3",
-  "#22d3ee": "#0e7490",
-  "#d4a857": "#8a6a2d",
+const LIGHT: Record<string, string> = {
+  "#a78bfa": "#a07a30",
+  "#22d3ee": "#0a6470",
+  "#d4a857": "#a07a30",
+  "#7c5db8": "#5b3aa3",
 };
 
 export default function AmbientScene({
-  colorA = "#a78bfa",
-  colorB = "#22d3ee",
+  colorA = "#d4a857",
+  colorB = "#0e7490",
 }: {
   colorA?: string;
   colorB?: string;
 }) {
   const { theme } = useTheme();
-  const palette = theme === "dark" ? DARK_PALETTE : LIGHT_PALETTE;
+  const palette = theme === "dark" ? DARK : LIGHT;
   const a = palette[colorA] || colorA;
   const b = palette[colorB] || colorB;
   return (
